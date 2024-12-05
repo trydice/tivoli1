@@ -1,0 +1,155 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customize Your Menu</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/chat.css">
+    <script src="https://js.stripe.com/v3/" defer></script> <!-- Stripe.js -->
+    <script src="../static/js/bot.js" defer></script> <!-- bot.js with defer -->
+    <style>
+        /* Floating View Menu Button Style */
+        .view-menu-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000; /* Ensures it appears above other content */
+        }
+
+        .view-menu-btn:hover {
+            background-color: #0077A3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Chat Container -->
+    <div class="chat-container">
+        <h1 class="gradient-header">How can I help you?</h1>
+        <div class="chat-history" id="chat-history">
+            <!-- Render server-side chat history -->
+            {% for message in chat_history %}
+                <div class="chat-bubble {{ 'user' if message.role == 'user' else 'assistant' }}">
+                    <img class="avatar" src="{{ '../static/assests/human.jpg' if message.role == 'user' else '../static/assests/bot.png' }}" alt="{{ message.role }}">
+                    <p><strong>{{ 'You' if message.role == 'user' else 'Assistant' }}:</strong> {{ message.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- Chat input form -->
+        <form class="chat-input-container" onsubmit="return false;">
+            <input type="text" id="chat-input" class="chat-input" placeholder="Type your message here..." required>
+            <button type="submit" class="chat-submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Menu Section -->
+    <div class="menu-container">
+        <h2 class="gradient-header">Current Menu</h2>
+        <div class="menu">
+            {% for course_type, items in selected_rec['Final Menu'].items() %}
+                <h3>{{ course_type }}</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Qty</th>
+                            <th>Item</th>
+                            <th>Item/Cost</th>
+                            <th>Feeds</th>
+                            <th>Total Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                            <tr data-item-id="{{ item['Item'] }}">
+                                <td class="quantity-cell">
+                                    <button class="quantity-btn decrease">-</button>
+                                    <span class="item-quantity">{{ item['Quantity'] }}</span>
+                                    <button class="quantity-btn increase">+</button>
+                                </td>
+                                <td>
+                                    {{ item['Item'] }}
+                                    {% if item['Dietary Restrictions'] %}
+                                        {% if " " in item['Dietary Restrictions'] or ' ' in item['Dietary Restrictions'] %}
+                                            {{ item['Dietary Restrictions'] }}
+                                        {% else %}
+                                            ({{ item['Dietary Restrictions'] }})
+                                        {% endif %}
+                                    {% endif %}
+                                </td>
+                                <td>${{ "%.2f"|format(item['Selected Portion']['Cost']) }}</td>
+                                <td>{{ item['Total_Servings'] }}</td>
+                                <td>${{ (item['Quantity'] * item['Selected Portion']['Cost']) | round(2) }}</td>
+
+
+
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endfor %}
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            
+            <button onclick="openEmailModal()" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer;">
+                Checkout
+            </button>
+            <!-- Update Total Cost Button -->
+
+        </div>
+        
+
+    </div>
+
+    <!-- View Menu Button (Floating at Bottom Right) -->
+    <a href="../static/menu.pdf" target="_blank">
+        <button class="view-menu-btn">
+            View Menu
+        </button>
+    </a>
+
+    <!-- Checkout Modal -->
+    <div id="emailModal" class="modal" style="display: none;">
+        <div class="checkout-container" style="margin-left: 330px; margin-top: 90px;">
+            <!-- Checkout Image Section -->
+            <div class="checkout-image"></div>
+            
+            <!-- Checkout Form Section -->
+            <div class="checkout-form">
+                <span class="close" onclick="closeEmailModal()">&times;</span>
+                <h2>Enter Your Details</h2>
+                <form id="emailForm">
+                    <label for="user_name">Full Name</label>
+                    <input type="text" id="user_name" name="user_name" placeholder="Your Full Name" required>
+    
+                    <label for="user_email">Email</label>
+                    <input type="email" id="user_email" name="user_email" placeholder="Your Email" required>
+    
+                    <label for="user_address">Delivery Address</label>
+                    <input type="text" id="user_address" name="user_address" placeholder="Delivery Address" required>
+    
+                    <label for="delivery_datetime">Delivery Date & Time</label>
+                    <input type="datetime-local" id="delivery_datetime" name="delivery_datetime" required>
+                    <p id="datetime-error" style="color: red; display: none;">Delivery date and time must be at least 24 hours in the future.</p>
+                    
+                    
+                    <label for="contact_number">Contact Number</label>
+                    <input type="text" id="contact_number" name="contact_number" placeholder="Contact Number" required>
+    
+                    <input type="hidden" name="selected_rec_index" value="{{ recommendation_index }}">
+    
+                    <button type="submit">Confirm Checkout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

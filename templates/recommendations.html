@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Recommendations | Tivoli</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/work.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0-beta3/css/all.min.css">
+    <script defer src="../static/js/recom.js"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="logo">
+            <img src="../static/assests/Tivoli.jpg" alt="Tivoli Logo" class="logo-img">
+            <span class="logo-text">Tivoli</span>
+        </div>
+    </header>
+    <!-- User Prompt Section -->
+
+
+<!-- Regenerate Menu Section -->
+<div style="text-align: center; margin-top: 15px;">
+    <form id="regenerate-form" method="GET" action="{{ url_for('index') }}">
+        <label for="new-event-details" style="color: white; font-weight: bold;">Edit Your Event Details:</label><br>
+        <textarea id="new-event-details" name="event_details_input" rows="4" cols="50" style="margin-top: 10px;">{{ event_details_input }}</textarea><br>
+        <button type="submit" style="
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;">
+            Create New Menu
+        </button>
+    </form>
+</div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="carousel-navigation">
+            <button class="scroll-left" style="border-radius: 10px;">❮</button>
+            <button class="scroll-right" style="border-radius: 10px;">❯</button>
+        </div>
+
+        <form id="recommendations-form" method="post" action="{{ url_for('show_recommendations') }}">
+            <div class="recommendations-container">
+                {% for rec in recommendations %}
+                <div class="recommendation-card" style="width: 500px; background-color: #fff;">
+                    <div class="card-header">
+                        <h2>Menu {{ loop.index }}</h2>
+                        <p style="width: 120px; text-align: right; margin-left: 170px; margin-top:20px; color: black;">
+                            <strong>Prize:</strong> ${{ rec['Total Cost'] }}
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="menu-grid">
+                            {% set section_order = ['Main Course', 'Side','Appetizer', 'Dessert'] %}
+                            {% for section in section_order %}
+                                {% if rec['Final Menu'][section] is defined %}
+                                <div class="menu-category">
+                                    <h4>{{ section }}</h4>
+                                    {% if rec['Final Menu'][section] %}
+                                    <table class="menu-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Item</th>
+                                                <th>Feeds</th>
+                                                
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for item in rec['Final Menu'][section] %}
+                                            <tr>
+                                                <td>
+                                                    {{ item['Item'] }}
+                                                    {% set dietary_restrictions = item['Dietary Restrictions'].strip() %}
+                                                    {% if dietary_restrictions %}
+                                                        (
+                                                        {% set mapping = {
+                                                            "Vegetarian": "VEG",
+                                                            "vegetarian": "VEG",
+                                                            "Non-vegetarian": "Non-VEG",
+                                                            "non-vegetarian": "Non-VEG",
+                                                            "Dairy-free": "DF",
+                                                            "Gluten-free": "GF",
+                                                            "gluten-free": "GF",
+                                                            "Vegan": "VE",
+                                                            "Nut-free": "NF",
+                                                            "nut-free": "NF",
+                                                            "Sugar-free": "SF",
+                                                            "sugar-free": "SF"
+                                                        } %}
+                                                        {% for restriction in dietary_restrictions.split(', ') %}
+                                                            {{ mapping.get(restriction.strip(), restriction.strip()) }}{% if not loop.last %}, {% endif %}
+                                                        {% endfor %}
+                                                        )
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{ item['Selected Portion']['Qty'] * item['Quantity'] }}</td>
+                                               
+                                                <td>${{ item['Total_Cost'] }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    {% else %}
+                                    <p>No items selected for this course.</p>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="checkbox-container">
+                            <input type="radio" name="selected_rec" value="{{ loop.index0 }}" id="rec-{{ loop.index }}" class="checkbox-input" required>
+                            <label for="rec-{{ loop.index }}" class="checkbox-label">
+                                <span class="checkbox-custom"></span>
+                                Pick menu
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div style="text-align: center; font-size: 12px; color: #FFFFFF; margin-bottom: 18px;">
+                *Choose one menu and then proceed for Checkout or Customization.
+            </div>
+    
+            <div style="text-align: center; font-size: 12px; color: #FFFFFF; margin-bottom: 18px;">
+            *GF = Gluten-Free, VEG = Vegetarian, VE = Vegan, DF = Dairy-Free, NF = Nut-Free.
+        </div>
+    
+            <!-- Checkout and Customize Buttons -->
+            <div class="card-buttons" style="text-align: center; margin-top: 20px;">
+                <button type="button" onclick="openEmailModal()" class="checkout-btn">Checkout</button>
+                <button class="customize-btn">Customize</button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Modal for Additional Details -->
+    <div id="emailModal" class="modal" style="display: none;">
+        <div class="checkout-container">
+            <div class="checkout-image"></div>
+            <div class="checkout-form">
+                <span class="close" onclick="closeEmailModal()">&times;</span>
+                <h2>Enter Your Details</h2>
+                <form id="emailForm" method="post" action="/checkout">
+                    <input type="hidden" id="modal-rec-index" name="selected_rec">
+                    <label for="user_name">Full Name</label>
+                    <input type="text" id="user_name" name="user_name" placeholder="John Doe" required>
+                    <label for="user_email">Email</label>
+                    <input type="email" id="user_email" name="user_email" placeholder="example@domain.com" required>
+                    <label for="user_address">Delivery Address</label>
+                    <input type="text" id="user_address" name="user_address" placeholder="1234 Main St" required>
+                    <label for="date">Delivery Date</label>
+                    <input type="datetime-local" id="delivery_datetime" name="delivery_datetime" placeholder="Delivery Date & Time" required>
+                    <p id="datetime-error" style="color: red; display: none;">Delivery date and time must be at least 24 hours in the future.</p>
+                  
+                    <label for="contact_number">Contact Number</label>
+                    <input type="tel" id="contact_number" name="contact_number" placeholder="123-456-7890" required>
+                    <button type="submit">Confirm Checkout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="tivoli-footer">
+
+
+
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <img src="../static/assests/Tivoli.jpg" alt="Tivoli Logo" class="footer-logo-img">
+                <span class="footer-logo-text">Tivoli</span>
+            </div>
+            <p class="footer-text">© 2024 Tivoli. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Ensure JavaScript executes after DOM content loads
+        document.addEventListener("DOMContentLoaded", () => {
+            // Simulating the "event_details_input" variable
+
+
+            // Set minimum date for delivery
+            const deliveryDateInput = document.getElementById("delivery_datetime");
+            const errorMessage = document.getElementById("datetime-error");
+
+            function setMinDeliveryDateTime() {
+                const now = new Date();
+                const futureDate = new Date(now.getTime() + 24 * 60 * 60 * 1000); // Add 24 hours
+                const isoString = futureDate.toISOString().slice(0, 16); // Format as YYYY-MM-DDTHH:mm
+                deliveryDateInput.min = isoString;
+            }
+
+            deliveryDateInput.addEventListener("input", () => {
+                const selectedDate = new Date(deliveryDateInput.value);
+                const now = new Date();
+                const minDate = new Date(now.getTime() + 24 * 60 * 60 * 1000); // 24 hours from now
+
+                if (selectedDate < minDate) {
+                    errorMessage.style.display = "block";
+                    deliveryDateInput.value = ""; // Clear invalid input
+                } else {
+                    errorMessage.style.display = "none";
+                }
+            });
+
+            setMinDeliveryDateTime();
+        });
+
+       
+    </script>
+</body>
+</html>

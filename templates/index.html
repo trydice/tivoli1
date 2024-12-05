@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tivoli | Fine Dining</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/script.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+   
+
+
+    <!-- Header Section -->
+<header class="site-header">
+    <div class="logo">
+        <img src="../static/assests/Tivoli.jpg" alt="Tivoli Logo" class="logo-img"> <!-- Add your logo image -->
+        <span class="logo-text">Tivoli</span>
+    </div>
+  
+</header>
+
+<!-- Game Overlay -->
+
+ <div id="game-overlay">
+
+    <div class="game-message">
+        Play a quick game while we build your menus...
+    </div>
+    <div class="wrapper">
+        <!-- Score Details -->
+        <div class="game-details">
+            <span class="score">Score: 0</span>
+            <span class="high-score">High Score: 0</span>
+        </div>
+
+        <!-- Game Board -->
+        <div class="play-board"></div>
+
+        <!-- Arrow Controls -->
+        <div class="controls">
+            <i data-key="ArrowUp" class="fa-solid fa-arrow-up"></i>
+            <div>
+                <i data-key="ArrowLeft" class="fa-solid fa-arrow-left"></i>
+                <i data-key="ArrowDown" class="fa-solid fa-arrow-down"></i>
+                <i data-key="ArrowRight" class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+<!-- Fine Dining Section -->
+<section class="fine-dining">
+  <!-- Box or form on the left -->
+  <div class="form-section">
+      <div class="form-container">
+        <p id="validation-error" style="color: red; display: none;">Please provide valid event details!</p>
+        <form id="event-form"   method="post"  action="/"  onsubmit="startGameAndSubmit(event) ">   
+            <div class="input-group">
+                <label for="requirements"  style="text-align: left;">Enter event details below to get started</label>
+                <textarea id="requirements" name="event_details" rows="5" required></textarea>
+             </div>
+              <button type="submit"> Create my menus</button>
+          </form>
+        
+        </div>
+      </div>
+  </div>
+
+
+  <!-- Dining text on the right -->
+  <div class="dining-text">
+    
+    <p style="font-size: 1rem; line-height: 1.8; color: #0b2217; margin-top:  70px; text-align: left;">
+        <span style="font-weight: bold; color:#0b2217; font-size: 2rem;"></span> Please follow the steps below </span> <br>
+       
+        <span style="font-weight: bold; color: #0b2217;">1.</span> Tell us a few details like your headcount, budget</span>, and dietary restrictions we should be aware of. <br>
+        <span style="font-weight: bold; color:#0b2217;">2.</span> Press the Create my menus</span> button for your specially curated options. <br>
+        <span style="font-weight: bold; color:#0b2217;">3.</span> Customize or checkout with the menu that best fits your needs.
+    </p>
+</div>
+ 
+<!-- Floating Circular Button Section -->
+<div class="floating-circle">
+    <a href="#menu" class="circle-button">
+        <span> Menu</span>
+    </a>
+    <div class="menu-buttons">
+        <a id="openPdfButton"  href="static/menu.pdf"  class="menu-item">Main</a>
+     
+    </div>
+</div>
+</section>
+
+
+
+<footer class="tivoli-footer">
+    <div class="footer-container">
+        <div class="footer-logo-container">
+            <img src="../static/assests/Tivoli.jpg" alt="Tivoli Logo" class="footer-logo-img">
+            <span class="footer-logo-text">Tivoli</span>
+        </div>
+        <p class="footer-text">
+            © 2024 Tivoli. All rights reserved. .
+        </p>
+    </div>
+</footer>
+
+
+<!-- Existing content -->
+
+<!-- Add this script at the end of the body -->
+<script>
+    // Function to get query parameters
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // On page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const eventDetails = getQueryParam('event_details_input');
+        if (eventDetails) {
+            // Pre-fill the textarea
+            const textarea = document.getElementById('requirements');
+            textarea.value = eventDetails;
+
+            // Automatically submit the form
+            startGameAndSubmit(new Event('submit'));
+        }
+    });
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
