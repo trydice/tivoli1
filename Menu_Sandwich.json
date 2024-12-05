@@ -1,0 +1,227 @@
+[
+    {
+      "I": "Tivoli Cold Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Sandwich", "cold", "prosciutto"]
+    },
+    {
+      "I": "Polla Cold Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Sandwich", "cold", "chicken", "bacon"]
+    },
+    {
+      "I": "Polla Cold Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " , GF",
+      "Tags": ["Sandwich", "cold", "chicken", "bacon", "GF"]
+    },
+    {
+      "I": "Varzi Cold Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Sandwich", "cold", "chicken salad"]
+    },
+    {
+      "I": "Barolo Cold Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Sandwich", "cold", "turkey"]
+    },
+    {
+      "I": "Barolo Cold Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " , GF",
+      "Tags": ["Sandwich", "cold", "turkey", "GF"]
+    },
+    {
+      "I": "Alba Cold Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Sandwich", "cold", "tuna salad"]
+    },
+    {
+      "I": "Pianosa Cold Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Sandwich", "cold", "chicken", "ham", "bacon"]
+    },
+    {
+      "I": "Capraia Cold Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG, contains nuts",
+      "Tags": ["Sandwich", "cold", "VEG"]
+    },
+    {
+      "I": "Veggie Focaccia Cold Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG, VE, DF",
+      "Tags": ["Sandwich", "cold", "veggies", "VEG", "VE"]
+    },
+    {
+      "I": "Veggie Focaccia Cold Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG, VE, DF, GF",
+      "Tags": ["Sandwich", "cold", "veggies", "VEG", "VE", "GF"]
+    },
+    {
+      "I": "Chicken Parmesan Hot Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Sandwich", "hot", "chicken"]
+    },
+    {
+      "I": "Grilled Chicken Hot Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Sandwich", "hot", "chicken"]
+    },
+    {
+      "I": "Meatball Hot Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Sandwich", "hot", "meatball"]
+    },
+    {
+      "I": "Cigliano Hot Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Sandwich", "hot", "sausage"]
+    },
+    {
+      "I": "Steak and Cheese Hot Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Sandwich", "hot", "steak"]
+    },
+    {
+      "I": "Eggplant Parmesan Hot Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG",
+      "Tags": ["Sandwich", "hot", "eggplant", "VEG"]
+    },
+    {
+      "I": "Portobello Hot Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG",
+      "Tags": ["Sandwich", "hot", "mushrooms", "VEG"]
+    },
+    {
+      "I": "Portobello Hot Sandwich",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG, VE, GF",
+      "Tags": ["Sandwich", "hot", "mushrooms", "VEG", "VE", "GF"]
+    },
+    {
+      "I": "Strawberry Molise Cold Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG",
+      "Tags": ["Wrap", "cold", "strawberry", "VEG"]
+    },
+    {
+      "I": "Turkey Bacon Cold Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Wrap", "cold", "turkey", "bacon"]
+    },
+    {
+      "I": "Milan Cold Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Wrap", "cold", "chicken salad"]
+    },
+    {
+      "I": "Monza Cold Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Wrap", "cold", "chicken"]
+    },
+    {
+      "I": "Caesar Cold Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG",
+      "Tags": ["Wrap", "cold", "caesar", "VEG"]
+    },
+    {
+      "I": "Florence Cold Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG, VE, DF",
+      "Tags": ["Wrap", "cold", "VEG", "VE"]
+    },
+    {
+      "I": "Florence Cold Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG, VE, DF, GF",
+      "Tags": ["Wrap", "cold", "VEG", "VE", "GF"]
+    },
+    {
+      "I": "Buffalo Chicken Hot Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Wrap", "hot", "chicken", "buffalo"]
+    },
+    {
+      "I": "BBQ Chicken Hot Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Wrap", "hot", "chicken", "BBQ"]
+    },
+    {
+      "I": "Foggia Hot Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Wrap", "hot", "chicken"]
+    },
+    {
+      "I": "Bari Hot Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG",
+      "Tags": ["Wrap", "hot", "VEG", "veggies"]
+    },
+    {
+      "I": "Palermo Hot Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG",
+      "Tags": ["Wrap", "hot", "mushrooms", "VEG"]
+    },
+    {
+      "I": "Naples Hot Wrap",
+      "P": [{"Qty": 1, "Cost": 14}],
+      "T": "Main",
+      "D": "VEG",
+      "Tags": ["Wrap", "hot", "VEG"]
+    }
+  ]
+  

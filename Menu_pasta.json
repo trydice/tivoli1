@@ -1,0 +1,161 @@
+[
+    {
+      "I": "Chicken Parmesan",
+      "P": [
+        {"Qty": 7, "Cost": 70},
+        {"Qty": 12, "Cost": 100}
+      ],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Chicken", "parmesan", "rice"]
+    },
+    {
+      "I": "Chicken Marsala",
+      "P": [
+        {"Qty": 7, "Cost": 70},
+        {"Qty": 12, "Cost": 100}
+      ],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Chicken", "marsala", "rice"]
+    },
+    {
+      "I": "Eggplant Parmesan",
+      "P": [
+        {"Qty": 12, "Cost": 100}
+      ],
+      "T": "Main",
+      "D": " VEG",
+      "Tags": ["Eggplant", "parmesan"]
+    },
+    {
+      "I": "Steak Tips",
+      "P": [
+        {"Qty": 7, "Cost": 85},
+        {"Qty": 12, "Cost": 150}
+      ],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Steak", "vegetables"]
+    },
+    {
+      "I": "Baked Ziti",
+      "P": [
+        {"Qty": 7, "Cost": 50},
+        {"Qty": 12, "Cost": 75}
+      ],
+      "T": "Main",
+      "D": " VEG",
+      "Tags": ["Pasta", "ziti"]
+    },
+    {
+      "I": "Classic Lasagna",
+      "P": [
+        {"Qty": 12, "Cost": 100}
+      ],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Pasta", "lasagna"]
+    },
+    {
+      "I": "Pasta with Marinara Sauce",
+      "P": [
+        {"Qty": 7, "Cost": 45},
+        {"Qty": 12, "Cost": 65}
+      ],
+      "T": "Main",
+      "D": " VEG, DF",
+      "Tags": ["Pasta", "marinara"]
+    },
+    {
+      "I": "Pasta with Marinara Sauce",
+      "P": [
+        {"Qty": 7, "Cost": 45},
+        {"Qty": 12, "Cost": 65}
+      ],
+      "T": "Main",
+      "D": " VEG, DF, VE, GF",
+      "Tags": ["Pasta", "marinara", "GF"]
+    },
+    {
+      "I": "Fettuccine Alfredo",
+      "P": [
+        {"Qty": 7, "Cost": 50},
+        {"Qty": 12, "Cost": 70}
+      ],
+      "T": "Main",
+      "D": " VEG",
+      "Tags": ["Pasta", "fettuccine", "alfredo"]
+    },
+    {
+      "I": "Chicken & Broccoli",
+      "P": [
+        {"Qty": 7, "Cost": 70},
+        {"Qty": 12, "Cost": 100}
+      ],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Pasta", "chicken", "broccoli"]
+    },
+    {
+      "I": "Chicken & Broccoli",
+      "P": [
+        {"Qty": 7, "Cost": 70},
+        {"Qty": 12, "Cost": 100}
+      ],
+      "T": "Main",
+      "D": "GF",
+      "Tags": ["Pasta", "chicken", "broccoli", "GF"]
+    },
+    {
+      "I": "Penne Bolognese",
+      "P": [
+        {"Qty": 7, "Cost": 80},
+        {"Qty": 12, "Cost": 120}
+      ],
+      "T": "Main",
+      "D": " ",
+      "Tags": ["Pasta", "penne", "bolognese"]
+    },
+    {
+      "I": "Chicken Piccata",
+      "P": [
+        {"Qty": 7, "Cost": 70},
+        {"Qty": 12, "Cost": 100}
+      ],
+      "T": "Main",
+      "D": "DF",
+      "Tags": ["Pasta", "chicken", "piccata"]
+    },
+    {
+      "I": "Roasted Vegetables Ravioli",
+      "P": [
+        {"Qty": 7, "Cost": 70},
+        {"Qty": 12, "Cost": 100}
+      ],
+      "T": "Main",
+      "D": " VEG, DF, VE",
+      "Tags": ["Pasta", "vegetables", "VE"]
+    },
+    {
+      "I": "Roasted Vegetables Ravioli",
+      "P": [
+        {"Qty": 7, "Cost": 70},
+        {"Qty": 12, "Cost": 100}
+      ],
+      "T": "Main",
+      "D": " VEG, DF, VE, GF",
+      "Tags": ["Pasta", "vegetables", "VE", "GF"]
+    },
+    {
+      "I": "Potato Gnocchi",
+      "P": [
+        {"Qty": 7, "Cost": 80},
+        {"Qty": 12, "Cost": 120}
+      ],
+      "T": "Main",
+      "D": " VEG",
+      "Tags": ["Pasta", "gnocchi"]
+    }
+  ]
+  

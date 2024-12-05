@@ -1,0 +1,190 @@
+[
+    {
+      "I": "Garden Salad",
+      "P": [
+        {"Qty": 7, "Cost": 45},
+        {"Qty": 12, "Cost": 65}
+      ],
+      "T": "Side",
+      "D": "VEG, VE, GF, NF",
+      "Tags": ["VEG", "VE", "GF", "NF", "salad"]
+    },
+    {
+      "I": "Caesar Salad",
+      "P": [
+        {"Qty": 7, "Cost": 45},
+        {"Qty": 12, "Cost": 65}
+      ],
+      "T": "Side",
+      "D": "VEG",
+      "Tags": ["VEG", "Caesar", "salad"]
+    },
+    {
+      "I": "Greek Salad",
+      "P": [
+        {"Qty": 7, "Cost": 50},
+        {"Qty": 12, "Cost": 70}
+      ],
+      "T": "Side",
+      "D": "VEG, GF",
+      "Tags": ["VEG", "GF", "greek", "salad"]
+    },
+    {
+      "I": "Caprese Salad",
+      "P": [
+        {"Qty": 7, "Cost": 50},
+        {"Qty": 12, "Cost": 70}
+      ],
+      "T": "Side",
+      "D": "VEG, GF",
+      "Tags": ["VEG", "GF", "caprese", "salad"]
+    },
+    {
+      "I": "Cavolo Salad",
+      "P": [
+        {"Qty": 7, "Cost": 55},
+        {"Qty": 12, "Cost": 75}
+      ],
+      "T": "Side",
+      "D": "VEG, GF",
+      "Tags": ["VEG", "GF", "cavolo", "salad"]
+    },
+    {
+      "I": "Giulia Salad",
+      "P": [
+        {"Qty": 7, "Cost": 60},
+        {"Qty": 12, "Cost": 80}
+      ],
+      "T": "Side",
+      "D": "VEG, GF",
+      "Tags": ["VEG", "GF", "giulia", "salad"]
+    },
+    {
+      "I": "Chips",
+      "P": [{"Qty": 1, "Cost": 2}],
+      "T": "Side",
+      "D": "VEG",
+      "Tags": ["Side", "chips"]
+    },
+    {
+      "I": "Fresh Homemade Rolls and Butter",
+      "P": [{"Qty": 1, "Cost": 0}],
+      "T": "Side",
+      "D": "VEG",
+      "Tags": ["Bread", "rolls"]
+    },
+    {
+      "I": "Toasted Cheese Ravioli",
+      "P": [{"Qty": 30, "Cost": 25}],
+      "T": "Appetizer",
+      "D": "VEG",
+      "Tags": ["Appetizer", "ravioli", "cheese"]
+    },
+    {
+      "I": "Tomato Bruschetta",
+      "P": [{"Qty": 10, "Cost": 30}],
+      "T": "Appetizer",
+      "D": "VEG",
+      "Tags": ["Appetizer", "tomato", "bruschetta"]
+    },
+    {
+      "I": "Arancini",
+      "P": [{"Qty": 20, "Cost": 20}],
+      "T": "Appetizer",
+      "D": "VEG",
+      "Tags": ["Appetizer", "arancini"]
+    },
+    {
+      "I": "Antipasto Platter",
+      "P": [{"Qty": 15, "Cost": 130}],
+      "T": "Appetizer",
+      "D": " , GF",
+      "Tags": ["Appetizer", "antipasto"]
+    },
+    {
+      "I": "Traditional Burrata",
+      "P": [{"Qty": 8, "Cost": 25}],
+      "T": "Appetizer",
+      "D": "VEG",
+      "Tags": ["Appetizer", "burrata"]
+    },
+    {
+      "I": "Stuffed Zucchini Boats",
+      "P": [{"Qty": 8, "Cost": 25}],
+      "T": "Appetizer",
+      "D": " , GF",
+      "Tags": ["Appetizer", "zucchini"]
+    },
+    {
+      "I": "Cookies Tray",
+      "P": [
+        {"Qty": 8, "Cost": 30},
+        {"Qty": 15, "Cost": 50}
+      ],
+      "T": "Dessert",
+      "D": "VEG",
+      "Tags": ["Dessert", "sweet", "cookies"]
+    },
+    {
+      "I": "Cookies & Brownies Tray",
+      "P": [
+        {"Qty": 8, "Cost": 40},
+        {"Qty": 15, "Cost": 60}
+      ],
+      "T": "Dessert",
+      "D": "VEG",
+      "Tags": ["Dessert", "sweet", "cookies", "brownies"]
+    },
+    {
+      "I": "Cannoli Tray",
+      "P": [
+        {"Qty": 8, "Cost": 45},
+        {"Qty": 15, "Cost": 80}
+      ],
+      "T": "Dessert",
+      "D": "VEG",
+      "Tags": ["Dessert", "sweet", "cannoli"]
+    },
+    {
+      "I": "Italian Paradise Tray",
+      "P": [
+        {"Qty": 8, "Cost": 50},
+        {"Qty": 15, "Cost": 90}
+      ],
+      "T": "Dessert",
+      "D": "VEG",
+      "Tags": ["Dessert", "sweet", "cookies", "brownies", "cannoli"]
+    },
+    {
+      "I": "Tiramisu Cup",
+      "P": [{"Qty": 1, "Cost": 8}],
+      "T": "Dessert",
+      "D": "VEG",
+      "Tags": ["Dessert", "sweet", "tiramisu"]
+    },
+    {
+      "I": "Individual Cookies",
+      "P": [
+        {"Qty": 1, "Cost": 3},
+        {"Qty": 1, "Cost": 5}
+      ],
+      "T": "Dessert",
+      "D": "VEG",
+      "Tags": ["Dessert", "sweet", "cookies"]
+    },
+    {
+      "I": "Chocolate Chip GF Cookies",
+      "P": [{"Qty": 1, "Cost": 5}],
+      "T": "Dessert",
+      "D": "VEG, GF",
+      "Tags": ["Dessert", "sweet", "cookies", "GF"]
+    },
+    {
+      "I": "Individual Brownies",
+      "P": [{"Qty": 1, "Cost": 5}],
+      "T": "Dessert",
+      "D": "VEG",
+      "Tags": ["Dessert", "sweet", "brownies"]
+    }
+  ]
+  
