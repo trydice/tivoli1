@@ -1,0 +1,669 @@
+/* General Container Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f8fc;
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}/* Gradient Text Header Styling */
+.gradient-header {
+    text-align: center;
+    font-size: 28px; /* Slightly smaller font size for elegance */
+    font-weight: bold;
+    margin: 20px auto;
+    width: fit-content; /* Keep it compact */
+    font-family: 'cursive'; /* Elegant and modern font */
+    background: linear-gradient(15deg, #1f574c, #324a47);
+   
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Makes gradient visible */
+    letter-spacing: 1.2px; /* Improved readability with subtle spacing */
+    text-shadow: 11px 4px 13px rgba(0, 0, 0, 0.1); /* Delicate shadow for sophistication */
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Smooth hover effects */
+}
+
+/* Hover Effect */
+.gradient-header:hover {
+    transform: scale(1.05); /* Subtle zoom for interactivity */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+}
+
+
+
+/* Chat Container */
+.chat-container {
+    width: 50%;
+    height: 50%;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(90deg, #476b65, #88d8b0); /* Soft green gradient applied to text */
+    margin-left: 20px;
+  
+}
+
+.chat-container:hover {
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat History */
+.chat-history {
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+/* Chat Bubble Styling */
+.chat-bubble {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 14px;
+    border-radius: 18px;
+    max-width: 75%;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* User Chat Bubble */
+.chat-bubble.user {
+    background-color: #d3f3fc;
+    margin-left: auto;
+    text-align: right;
+    border: 1px solid #b2e4f4;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Assistant Chat Bubble */
+.chat-bubble.assistant {
+    background-color: #ffe6e1;
+    text-align: left;
+    border: 1px solid #ffc2b8;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar Images */
+.chat-bubble img.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #e0e0e0;
+}
+
+.chat-bubble.user img.avatar {
+    margin-left: 15px;
+    margin-right: 0;
+    border: 2px solid #b2e4f4;
+}
+
+/* Chat Input Section */
+.chat-input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+/* Chat Input Box */
+.chat-input {
+    flex: 1;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    font-size: 15px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.chat-input:focus {
+    border: 1px solid #4caf50;
+    outline: none;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Send Button Styling */
+.chat-submit {
+    background: linear-gradient(135deg, #338676, #13ac9a); 
+  
+    color: white;
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.chat-submit:hover {
+    background: linear-gradient(135deg, #338676, #13ac9a); 
+  
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+    transform: scale(1.05);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #333333;
+}
+
+table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling the PDF Button */
+a#openPdfButton {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a#openPdfButton:hover {
+    color: #0056b3;
+    text-decoration: underline;
+    transform: translateY(-3px);
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 90%;
+    }
+
+    .chat-input-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .chat-submit {
+        width: 100%;
+    }
+}
+
+
+
+
+/* Floating Circle Button Styling */
+.floating-circle {
+    position:fixed; /* Keep it fixed on the screen */
+    bottom: 20px; /* Distance from bottom */
+    right: 35px; /* Distance from right */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.circle-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* Button size */
+    height: 60px;
+    background: linear-gradient(90deg, #88d8b0, #5ba89d);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.circle-button:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background: linear-gradient(15deg, #1f2e2b, #324a47);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+}
+
+/* Hidden Menu Items (Default State) */
+.menu-buttons {
+    display: flex;
+    flex-direction: column; /* Stack menu items vertically */
+    gap: 10px; /* Spacing between buttons */
+    position: absolute; /* Position relative to the circle button */
+    bottom: 70px; /* Adjusted position above the circle button */
+    right: 0;
+    opacity: 0; /* Start hidden */
+    visibility: hidden; /* Prevent interaction when hidden */
+    transform: translateY(20px); /* Initial downward position for animation */
+    transition: all 0.3s ease; /* Smooth transition for visibility and position */
+}
+
+/* Menu Items Style */
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    background: linear-gradient(15deg, #1f2e2b, #324a47);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover {
+    background: #0b1f1f; /* Slightly darker shade on hover */
+    transform: scale(1.05); /* Slight hover effect */
+}
+
+/* Expanded State for Menu */
+.floating-circle:hover .menu-buttons {
+    opacity: 1; /* Fully visible */
+    visibility: visible;
+    transform: translateY(0); /* Move into view */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .circle-button {
+        width: 50px; /* Slightly smaller button */
+        height: 50px;
+        font-size: 12px;
+    }
+
+
+}
+
+
+/* Menu Styling */
+.menu-container {
+    width: 45%; /* Adjusted to fit next to chatbox */
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    overflow-x: auto;
+}
+
+
+.menu h2 {
+    font-size: 22px;
+    text-align: center;
+    color: #2d6a4f;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.menu h3 {
+    font-size: 18px;
+    color: #1b4332;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #88d8b0; /* Green underline for sections */
+    padding-bottom: 5px;
+}
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px; /* Comfortable font size */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+
+thead {
+    background-color: #007BFF;
+    color: white;
+    font-size: 12px;
+}
+
+thead th {
+    text-transform: uppercase;
+    padding: 6px;
+    background-color: #5ba89d;
+}
+
+tbody td {
+    padding: 6px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .menu-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .menu, .chat-container {
+        width: 100%;
+    }
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+/* Modal Content (Centered Box) */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the modal */
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Adjust width as needed */
+    max-width: 500px; /* Maximum width for the modal */
+}
+
+/* Close Button */
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
+
+
+/* Modal Styling */
+#emailModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better focus */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Checkout Container */
+.checkout-container {
+    display: flex;
+    flex-direction: row; /* Image on the right, form on the left */
+    background-color: #ffffff;
+    width: 85%;
+    max-width: 600px; /* Smaller width for a compact look */
+    border-radius: 15px; /* Softer rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow for a modern look */
+    overflow: hidden; /* Prevent content overflow */
+    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in animation */
+}
+
+/* Checkout Image Section */
+.checkout-image {
+    width: 50%; /* Take half of the container width */
+    background: url('../assests/back06.jpeg') center center no-repeat; /* Replace with your image path */
+    background-size: cover; /* Ensure the image covers the entire section */
+    filter: brightness(0.8); /* Slight dim effect for better contrast */
+    position: relative;
+}
+
+.checkout-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Add overlay to make the image more subtle */
+}
+
+/* Checkout Form Section */
+.checkout-form {
+    width: 50%; /* Take the other half of the container */
+    display: flex;
+    flex-direction: column;
+    padding: 25px; /* Add spacing inside the form */
+    gap: 15px; /* Space between form elements */
+    background: linear-gradient(135deg, #ffffff, #f7f9fa); /* Subtle gradient for a modern look */
+}
+
+/* Form Title */
+.checkout-form h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50; /* Muted dark color */
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Form Labels */
+.checkout-form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 5px;
+}
+
+/* Form Inputs */
+.checkout-form input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    background: #f9f9f9; /* Light gray background for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.checkout-form input:focus {
+    border-color: #5ba89d; /* Accent color on focus */
+    box-shadow: 0 0 8px rgba(91, 168, 157, 0.5); /* Subtle glow effect on focus */
+    outline: none;
+}
+
+/* Close Button */
+.checkout-form .close {
+    font-size: 18px;
+    font-weight: bold;
+    color: #7f8c8d;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.checkout-form .close:hover {
+    color: #e74c3c; /* Red for hover effect */
+}
+
+/* Submit Button */
+.checkout-form button {
+    background-color: #042e16; /* Green for action */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3); /* Soft shadow for buttons */
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.checkout-form button:hover {
+    background-color: #0e381f; /* Darker green on hover */
+    transform: scale(1.05); /* Slight scale effect */
+    box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4); /* Enhanced shadow on hover */
+    margin-top: 30px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .checkout-container {
+        flex-direction: column; /* Stack the form and image vertically */
+        width: 90%;
+        max-width: 400px;
+        border-radius: 10px; /* Adjusted for smaller screens */
+    }
+
+    .checkout-image {
+        width: 100%; /* Full width for the image section */
+        height: 200px; /* Adjust image height for smaller screens */
+    }
+
+    .checkout-form {
+        width: 100%; /* Full width for the form section */
+        padding: 20px;
+    }
+
+    .checkout-form button {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .checkout-form input {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .checkout-form h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-container {
+        width: 95%; /* Expand width for small screens */
+    }
+
+    .checkout-form button {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .checkout-form input {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .checkout-form h2 {
+        font-size: 18px;
+    }
+}
+.quantity-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-cell .quantity-btn {
+    padding: 5px 10px;
+    font-size: 16px;
+    margin: 0 5px;
+    background-color: #5ba89d;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-cell .quantity-btn:hover {
+    background-color: #3a7569;
+}
+
+.quantity-cell .item-quantity {
+    min-width: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+

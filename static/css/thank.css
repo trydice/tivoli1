@@ -1,0 +1,232 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #fcf8ee; /* Light cream background */
+    overflow: hidden;
+}
+
+/* Main Container */
+.thank-you-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Title */
+.thank-you-title {
+    font-size: 3rem;
+    color: hsl(170, 89%, 33%); /* Green gradient for action focus */
+    font-weight: bold;
+    margin: 0;
+    z-index: 1;
+}
+
+/* Message */
+.thank-you-message {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 600px;
+    line-height: 1.5;
+    margin: 10px auto;
+    z-index: 1;
+}
+
+.email {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.email:hover {
+    text-decoration: underline;
+}
+
+
+/* Confetti and Dots */
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.dot {
+    position: absolute;
+    background-color: #ff3b3b; /* Red */
+    border-radius: 50%;
+    animation: float 6s infinite;
+    z-index: 0;
+}
+
+.dot.yellow {
+    background-color: #ffd700;
+}
+
+.dot.blue {
+    background-color: #1e90ff;
+}
+
+.dot.green {
+    background-color: #32cd32;
+}
+
+/* Falling Animation for Ribbons */
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Floating Dots Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* Party Poppers */
+.popper {
+    position: absolute;
+    background: linear-gradient(45deg, #ff6f61, #ffcc00); /* Gradient for popper color */
+    border-radius: 50%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape for streamers */
+    transform-origin: center;
+    z-index: 1;
+    animation: fall 6s linear infinite, rotatePopper 3s ease-in-out infinite;
+}
+
+/* Animation for Falling and Rotating */
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes rotatePopper {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+}
+
+/* Confetti Dots */
+.dot {
+    position: absolute;
+    background-color: #ff3b3b; /* Red */
+    border-radius: 50%;
+    animation: float 6s infinite;
+    z-index: 0;
+}
+
+.dot.yellow {
+    background-color: #ffd700;
+}
+
+.dot.blue {
+    background-color: #1e90ff;
+}
+
+.dot.green {
+    background-color: #32cd32;
+}
+
+/* Floating Dots Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+/* Party Popper Ribbons */
+.party-popper {
+    position: absolute;
+    width: 3px;
+    height: 200px;
+    background: linear-gradient(45deg, #ff3b3b, #ffd700, #1e90ff, #32cd32); /* Ribbon colors */
+    border-radius: 2px;
+    animation: ribbon-fall 6s linear infinite;
+    transform-origin: top center;
+    z-index: 1;
+    clip-path: polygon(
+        50% 0%,
+        55% 20%,
+        45% 40%,
+        50% 60%,
+        55% 80%,
+        50% 100%
+    );
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+#confetti{
+	background:white;
+	height: 100%;
+	left: 0px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: -1;
+}
+
+

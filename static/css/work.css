@@ -1,0 +1,853 @@
+/* =====================================
+   Import Google Fonts
+===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap');
+
+/* =====================================
+   Global Styles
+===================================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    background: linear-gradient(15deg, #1f2e2b, #324a47);
+}
+
+/* Scrollbar Styling */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #5ba89d;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #3b4e4e;
+}
+
+/* =====================================
+   Header Styles
+===================================== */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(15deg, #1f2e2b, #324a47);
+    color: #ffffff;
+    font-family: 'Palatino', serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.site-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #76c7c0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #76c7c0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    gap: 15px;
+    font-size: 16px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 2px;
+}
+
+.navigation a:hover {
+    color: #76c7c0;
+    border-bottom: 2px solid #76c7c0;
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+}
+
+/* =====================================
+   Recommendations Section
+===================================== */
+.recommendations-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Recommendation Card */
+.recommendation-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 600px; /* Increased width */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommendation-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header */
+.card-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    font-size: 28px; /* Increased font size */
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-header p {
+    font-size: 18px; /* Increased font size */
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+/* Card Body */
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Menu Category */
+.menu-category h4 {
+    font-size: 22px; /* Increased font size */
+    color: #4a4a4a;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Menu Table */
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px; /* Increased font size */
+    text-align: left;
+}
+
+.menu-table th {
+    background-color: #5ba89d;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.menu-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background: #ffffff;
+    color: #4a4a4a;
+}
+
+.menu-table tr:hover td {
+    background-color: #ecf9f1;
+    color: #34495e;
+}
+
+/* Card Footer */
+.card-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.checkout-btn,
+.customize-btn {
+    font-size: 18px; /* Increased font size */
+    padding: 12px 24px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin: 0 10px;
+}
+
+.checkout-btn {
+    background-color: #27ae60;
+    color: #ffffff;
+}
+
+.checkout-btn:hover {
+    background-color: #219150;
+    transform: scale(1.05);
+}
+
+.customize-btn {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+.customize-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Checkbox Container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Hide the default radio button */
+.checkbox-input {
+    display: none;
+}
+
+/* Create a custom checkbox */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px; /* Increased font size */
+    color: #000;
+}
+
+.checkbox-custom {
+    width: 24px; /* Increased size */
+    height: 24px;
+    border: 2px solid #000;
+    background-color: #fff;
+    margin-right: 8px;
+    position: relative;
+}
+
+.checkbox-input:checked + .checkbox-label .checkbox-custom::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #000;
+    top: 4px;
+    left: 4px;
+}
+
+/* Hover effect */
+.checkbox-label:hover .checkbox-custom {
+    border-color: #555;
+}
+
+/* Responsive Adjustments */
+
+/* Tablet (max-width: 1023px) */
+@media (max-width: 1023px) {
+    .recommendation-card {
+        width: 80%;
+    }
+    .card-header h2 {
+        font-size: 24px;
+    }
+    .card-header p {
+        font-size: 18px;
+    }
+    .menu-category h4 {
+        font-size: 20px;
+    }
+    .menu-table th,
+    .menu-table td {
+        font-size: 16px;
+    }
+    .checkout-btn,
+    .customize-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+    .recommendations-container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .recommendation-card {
+        width: 90%;
+        scroll-snap-align: center;
+    }
+
+    .recommendations-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card-header h2 {
+        font-size: 22px;
+    }
+
+    .card-header p {
+        font-size: 16px;
+    }
+
+    .menu-category h4 {
+        font-size: 18px;
+    }
+
+    .menu-table th,
+    .menu-table td {
+        font-size: 14px;
+    }
+
+    .checkout-btn,
+    .customize-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .recommendation-card {
+        width: 95%;
+    }
+
+    .card-header h2 {
+        font-size: 20px;
+    }
+
+    .card-header p {
+        font-size: 14px;
+    }
+
+    .menu-category h4 {
+        font-size: 16px;
+    }
+
+    .menu-table th,
+    .menu-table td {
+        font-size: 12px;
+    }
+
+    .checkout-btn,
+    .customize-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .checkbox-label {
+        font-size: 16px;
+    }
+
+    .checkbox-custom {
+        width: 20px;
+        height: 20px;
+    }
+
+    .checkbox-input:checked + .checkbox-label .checkbox-custom::after {
+        width: 10px;
+        height: 10px;
+        top: 4px;
+        left: 4px;
+    }
+}
+
+/* =====================================
+   Carousel Navigation
+===================================== */
+.carousel-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+    position: relative;
+    bottom: -10px;
+}
+
+.scroll-left,
+.scroll-right {
+    background-color: #5ba89d;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.scroll-left:hover,
+.scroll-right:hover {
+    background-color: #222727;
+}
+
+/* =====================================
+   Footer Styling
+===================================== */
+.tivoli-footer {
+    background: linear-gradient(15deg, #1f2e2b, #324a47);
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Palatino', serif;
+    margin-top: 58px;
+    padding: 10px 20px;
+}
+
+/* Footer Content Container */
+.footer-container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Footer Logo Section */
+.footer-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #76c7c0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
+}
+
+.footer-logo-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #76c7c0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Footer Text Section */
+.footer-text {
+    font-size: 14px;
+    color: #aad8c1;
+    max-width: 700px;
+    line-height: 1.4;
+    margin: 0 auto;
+    padding: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-logo-img {
+        width: 40px;
+        height: 40px;
+    }
+    .footer-logo-text {
+        font-size: 16px;
+    }
+    .footer-text {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    .footer-container {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    .footer-logo-text {
+        font-size: 14px;
+    }
+    .footer-text {
+        font-size: 10px;
+    }
+    .tivoli-footer {
+        padding: 15px 5px;
+    }
+}
+
+/* =====================================
+   Modal Styling
+===================================== */
+#emailModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.checkout-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    width: 85%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Checkout Image Section */
+.checkout-image {
+    width: 50%;
+    background: url('/static/assests/back06.jpeg') center center no-repeat;
+    background-size: cover;
+    filter: brightness(0.8);
+    position: relative;
+}
+
+.checkout-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Checkout Form Section */
+.checkout-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 15px;
+    background: linear-gradient(135deg, #ffffff, #f7f9fa);
+    position: relative;
+}
+
+/* Form Title */
+.checkout-form h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Close Button */
+.checkout-form .close {
+    font-size: 18px;
+    font-weight: bold;
+    color: #7f8c8d;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.checkout-form .close:hover {
+    color: #e74c3c;
+}
+
+/* Form Labels */
+.checkout-form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 5px;
+}
+
+/* Form Inputs */
+.checkout-form input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.checkout-form input:focus {
+    border-color: #5ba89d;
+    box-shadow: 0 0 8px rgba(91, 168, 157, 0.5);
+    outline: none;
+}
+
+/* Submit Button */
+.checkout-form button {
+    background-color: #042e16;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+    margin-top: 20px;
+}
+
+.checkout-form button:hover {
+    background-color: #0e381f;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .checkout-container {
+        flex-direction: column;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+
+    .checkout-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .checkout-form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .checkout-form h2 {
+        font-size: 20px;
+    }
+
+    .checkout-form button {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .checkout-form input {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-container {
+        width: 95%;
+    }
+
+    .checkout-form h2 {
+        font-size: 18px;
+    }
+
+    .checkout-form button {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .checkout-form input {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =====================================
+   Floating Circle Button Styling
+===================================== */
+.floating-circle {
+    position: fixed;
+    bottom: 20px;
+    left: 35px;
+    z-index: 1000;
+}
+
+.circle-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(90deg, #88d8b0, #5ba89d);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.circle-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(15deg, #1f2e2b, #324a47);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Hidden Menu Items */
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+/* Menu Items Style */
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    background: linear-gradient(15deg, #1f2e2b, #324a47);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover {
+    background: #4e8b8b;
+    transform: scale(1.05);
+}
+
+/* Expanded State for Menu */
+.floating-circle:hover .menu-buttons {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .circle-button {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+    }
+
+    .menu-item {
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+}
+
+/* =====================================
+   Styles for Regenerate Form
+===================================== */
+#regenerate-form {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#regenerate-form label {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+#new-event-details {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#regenerate-form button {
+    margin-top: 15px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#regenerate-form button:hover {
+    background-color: #45a049;
+}
